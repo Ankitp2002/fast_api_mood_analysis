@@ -1,4 +1,4 @@
-from server import Server
+from configuration.server import Server
 
 
 def create_app():

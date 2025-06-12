@@ -1,6 +1,6 @@
-from fastapi import APIRouter
+from apis.health.views import sub_router as router
 
-router = APIRouter(prefix="/health", tags=["Health Check"])
+router = router("/health_check", tag=["Health Check"])
 
 
 @router.get("/", summary="Health Check", description="Check if the server is running")
