@@ -1,4 +1,5 @@
 from apis.health.views import sub_router as router
+from apis.schema import APIResponse
 
 router = router("/health_check", tag=["Health Check"])
 
@@ -8,4 +9,6 @@ async def health_check():
     """
     Health check endpoint to verify the server is running.
     """
-    return {"status": "ok", "message": "Server is running"}
+    return APIResponse.success(
+        data={"status": "healthy"}
+    )

@@ -7,11 +7,11 @@ class Setting(BaseSettings):
     DB_PORT: str = "3306"
     DB_NAME: str = "test"
     DB_USER: str = "root"
-    DB_PASSWORD: str = "root"
+    DB_PASW: str = "root"
 
     @property
     def DB_URL(self) -> str:
-        return f"{self.DB_DRIVER}://{self.DB_USER}:{self.DB_PASSWORD}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
+        return f"{self.DB_DRIVER}://{self.DB_USER}:{self.DB_PASW}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
 
     class Config:
         env_file = ".env"
